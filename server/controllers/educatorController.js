@@ -21,30 +21,7 @@ export const updateRoleToEducator = async (req, res) => {
   }
 };
 
-//  Add new course
-// export const addCourse = async(req,res) =>{
-//     try {
-//         const {courseData} = req.body;
-//         const imageFile = req.file;
-//         const educatorId = req.auth.userId
-//         console.log(educatoreId);
-//         if(!imageFile){
-//             return res.json({success: false, message:"Thumbnail Not Attached"})
-//         }
-
-//         const parsedCourseData = await JSON.parse(courseData)
-//         parsedCourseData.educator = educatorId
-//         const imageUpload = await cloudinary.uploader.upload(imageFile.path)
-//         newCourse.courseThumbnail = imageUpload.secure_url
-//         const newCourse = await Course.create(parsedCourseData)
-//         await newCourse.save()
-//         res.json({success: true, message: "Course Added"})
-
-//     } catch (error) {
-//         res.json({success: false, message:error.message})
-//     }
-// }
-
+// Add course
 export const addCourse = async (req, res) => {
   try {
     const { courseData } = req.body;
@@ -59,16 +36,6 @@ export const addCourse = async (req, res) => {
 
     const parsedCourseData = await JSON.parse(courseData);
     parsedCourseData.educator = educatorId;
-
-    // Ensure 'isPublished' defaults to true
-    // parsedCourseData.isPublished = parsedCourseData.isPublished ?? true;
-
-    // Ensure all lectures have required fields
-    // if (!parsedCourseData.courseContent?.every(chapter =>
-    //     chapter.chapterContent?.every(lecture => lecture.lectureId && lecture.lectureurl)
-    // )) {
-    //     return res.json({ success: false, message: "Lecture ID and URL are required in all chapters." });
-    // }
 
     // Upload image first
     const imageUpload = await cloudinary.uploader.upload(imageFile.path);
@@ -117,8 +84,6 @@ export const educatorDashboardData = async (req, res) => {
     const totalEarnings = Math.round(
       purchases.reduce((sum, purchase) => sum + purchase.amount, 0)
     ).toFixed(2);
-
-    // collect unique enrolled students ids with their course title
 
     const enrolledStudentsData = [];
     for (const course of courses) {
