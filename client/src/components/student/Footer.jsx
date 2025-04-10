@@ -10,7 +10,6 @@ const Footer = () => {
 
   // Added subscription handler
   const handleSubscribe = () => {
-    // Replace this with your subscription API integration if needed
     console.log("Subscribed with:", subscribeEmail);
     alert(`Subscribed with: ${subscribeEmail}`);
     setSubscribeEmail("");
