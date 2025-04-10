@@ -6,6 +6,6 @@ const connectDB = async () => {
   mongoose.connection.on("connected", () =>
     console.log("Database connected successfully!")
   );
-  await mongoose.connect(`${process.env.MONGODB_URI}/Edemy`);
+  await mongoose.connect(`${process.env.MONGODB_URI}/EdemyLMS`);
 };
 export default connectDB;
