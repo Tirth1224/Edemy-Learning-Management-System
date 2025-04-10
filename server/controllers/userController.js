@@ -140,17 +140,16 @@ export const getUserCourseProgress = async (req, res) => {
 // Add user ratings to course
 
 export const addUserRating = async (req, res) => {
+  const userId = req.auth.userId;
+  const { courseId, rating } = req.body;
+  // console.log("UserId", courseId);
+  // console.log("courseId", courseId);
+  // console.log("rating", rating);
+
+  if (!courseId || !userId || !rating || rating < 1 || rating > 5) {
+    res.json({ success: false, message: "Invalid details" });
+  }
   try {
-    const userId = req.auth.userId;
-    const { courseId, rating } = req.body;
-    // console.log("UserId", courseId);
-    // console.log("courseId", courseId);
-    // console.log("rating", rating);
-
-    if (!courseId || !userId || !rating || rating < 1 || rating > 5) {
-      res.json({ success: false, message: "Invalid details" });
-    }
-
     const course = await Course.findById(courseId);
     if (!course) {
       return res.json({ success: false, message: "Course Not found!" });
