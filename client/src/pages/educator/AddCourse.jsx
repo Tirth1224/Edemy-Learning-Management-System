@@ -131,8 +131,8 @@ const AddCourse = () => {
       };
 
       const formData = new FormData();
-      formData.append("courseData", JSON.stringify(courseData)); // ✅ Ensure courseData is sent as JSON
-      formData.append("image", image); // ✅ Ensure image is sent correctly
+      formData.append("courseData", JSON.stringify(courseData));
+      formData.append("image", image);
 
       const token = await getToken();
       const { data } = await axios.post(

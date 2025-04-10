@@ -12,21 +12,23 @@ const StudentsEnrolled = () => {
   const [enrolledStudents, setEnrolledStudents] = useState(null);
 
   const fetchEnrolledStudents = async () => {
-    setEnrolledStudents(dummyStudentEnrolled);
-    // try {
-    //   const token = await getToken();
-    //   const {data} = await axios.get(backendUrl + '/api/educator/enrolled-students', { headers: { Authorization: `Bearer ${token}` } })
-    //   // console.log("data", data.enrolledStudents);
+    // setEnrolledStudents(dummyStudentEnrolled);
+    try {
+      const token = await getToken();
+      const { data } = await axios.get(
+        backendUrl + "/api/educator/enrolled-students",
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      // console.log("data", data.enrolledStudents);
 
-    //   if(data.success){
-    //     setEnrolledStudents(data.enrolledStudents.reverse())
-    //   }
-    //   else{
-    //     toast.error(data.message)
-    //   }
-    // } catch (error) {
-    //   toast.error(error.message)
-    // }
+      if (data.success) {
+        setEnrolledStudents(data.enrolledStudents.reverse());
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {

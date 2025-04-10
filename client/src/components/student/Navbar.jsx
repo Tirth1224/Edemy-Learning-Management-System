@@ -14,31 +14,31 @@ const Navbar = () => {
   const { openSignIn } = useClerk();
   const { user } = useUser();
 
-  // const becomeEducator = async () => {
-  //   try {
-  //     if (isEducator) {
-  //       navigate("/educator");
-  //       return;
-  //     }
+  const becomeEducator = async () => {
+    try {
+      if (isEducator) {
+        navigate("/educator");
+        return;
+      }
 
-  //     const token = await getToken();
+      const token = await getToken();
 
-  //     const { data } = await axios.get(
-  //       backendUrl + "/api/educator/update-role",
-  //       { headers: { Authorization: `Bearer ${token}` } }
-  //     );
-  //     console.log("educ", data);
+      const { data } = await axios.get(
+        backendUrl + "/api/educator/update-role",
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      console.log("educ", data);
 
-  //     if (data.success) {
-  //       setIsEducator(true);
-  //       toast.success(data.message);
-  //     } else {
-  //       toast.error(data.message);
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.message);
-  //   }
-  // };
+      if (data.success) {
+        setIsEducator(true);
+        toast.success(data.message);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   return (
     <div
@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
           {user && (
             <>
-              <button onClick={() => navigate("/educator")}>
+              <button onClick={becomeEducator}>
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
               </button>
               | <Link to="/my-enrollments">My Enrollments</Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
           {user && (
             <>
-              <button onClick={() => navigate("/educator")}>
+              <button onClick={becomeEducator}>
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
               </button>
               | <Link to="/my-enrollments">My Enrollments</Link>

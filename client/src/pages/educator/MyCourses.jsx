@@ -11,25 +11,26 @@ const MyCourses = () => {
   const [courses, setCourses] = useState(null);
 
   const fetchEducatorCourses = async () => {
-    setCourses(allCourses);
-    // try {
-    //   const token = await getToken();
-    //   const {data} = await axios.get(backendUrl + '/api/educator/courses', { headers: { Authorization: `Bearer ${token}` } })
-    //   // console.log("data", data.courses);
+    // setCourses(allCourses);
+    try {
+      const token = await getToken();
+      const { data } = await axios.get(backendUrl + "/api/educator/courses", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      // console.log("data", data.courses);
 
-    //   data.success && setCourses(data.courses)
-    // } catch (error) {
-    //   toast.error(error.message)
-    //   console.log(error.message);
-
-    // }
+      data.success && setCourses(data.courses);
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
     if (isEducator) {
       fetchEducatorCourses();
     }
-  }, [allCourses]);
+  }, [isEducator]);
 
   return courses ? (
     <div className="h-full mb-10 flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0">
