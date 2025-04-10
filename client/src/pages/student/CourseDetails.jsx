@@ -30,19 +30,19 @@ const CourseDetails = () => {
   } = useContext(AppContext);
 
   const fetcheCourseData = async () => {
-    const findCourse = allCourses.find((course) => course._id === id);
-    setCourseData(findCourse);
+    // const findCourse = allCourses.find((course) => course._id === id);
+    // setCourseData(findCourse);
 
-    // try {
-    //   const { data } = await axios.get(backendUrl + "/api/course/" + id);
-    //   if (data.success) {
-    //     setCourseData(data.courseData);
-    //   } else {
-    //     toast.error(data.message);
-    //   }
-    // } catch (error) {
-    //   toast.error(error.message);
-    // }
+    try {
+      const { data } = await axios.get(backendUrl + "/api/course/" + id);
+      if (data.success) {
+        setCourseData(data.courseData);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   const enrollCourse = async () => {
@@ -74,7 +74,7 @@ const CourseDetails = () => {
 
   useEffect(() => {
     fetcheCourseData();
-  }, [allCourses]);
+  }, []);
 
   useEffect(() => {
     if (userData && courseData) {

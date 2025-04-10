@@ -17,49 +17,47 @@ export const AppContextProvider = (props) => {
   const { user } = useUser();
 
   const [allCourses, setAllCourses] = useState([]);
-  const [isEducator, setIsEducator] = useState(true);
+  const [isEducator, setIsEducator] = useState(false);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [userData, setUserData] = useState(null);
 
   // fetch all courses
   const fetchAllCourses = async () => {
-    setAllCourses(dummyCourses);
-    // try {
-    //     const {data} = await axios.get(backendUrl + '/api/course/all');
-    //     if(data.success)
-    //     {
-    //         setAllCourses(data.courses)
-    //     }else{
-    //         toast.error(data.message);
-    //     }
-
-    // } catch (error) {
-    //     toast.error(error.message)
-    // }
+    // setAllCourses(dummyCourses);
+    try {
+      const { data } = await axios.get(backendUrl + "/api/course/all");
+      if (data.success) {
+        setAllCourses(data.courses);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // fetch user data
-  // const fetchUserData = async () => {
-  //   if (user.publicMetadata.role === "educator") {
-  //     setIsEducator(true);
-  //   }
+  const fetchUserData = async () => {
+    if (user.publicMetadata.role === "educator") {
+      setIsEducator(true);
+    }
 
-  //   try {
-  //     const token = await getToken();
+    try {
+      const token = await getToken();
 
-  //     const { data } = await axios.get(backendUrl + "/api/user/data", {
-  //       headers: { Authorization: `Bearer ${token}` },
-  //     });
+      const { data } = await axios.get(backendUrl + "/api/user/data", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-  //     if (data.success) {
-  //       setUserData(data.user);
-  //     } else {
-  //       toast.error(data.message);
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.message);
-  //   }
-  // };
+      if (data.success) {
+        setUserData(data.user);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   // Function to calculate average rating of course
   const calculateRating = (course) => {
@@ -125,27 +123,27 @@ export const AppContextProvider = (props) => {
   // }
 
   const fetchUserEnrolledCourses = async () => {
-    // try {
-    //   const token = await getToken();
-    //   const response = await axios.get(
-    //     backendUrl + "/api/user/enrolled-courses",
-    //     {
-    //       headers: { Authorization: `Bearer ${token}` },
-    //     }
-    //   );
+    try {
+      const token = await getToken();
+      const { data } = await axios.get(
+        backendUrl + "/api/user/enrolled-courses",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
-    //   // console.log("Response:", response); // Debugging: Log full response
+      // console.log("Response:", response); // Debugging: Log full response
 
-    //   if (response.data && response.data.enrolledCourses) {
-    //     setEnrolledCourses(response.data.enrolledCourses.reverse());
-    //   } else {
-    //     toast.error(response.data?.message || "No enrolled courses found.");
-    //   }
-    // } catch (error) {
-    //   console.error("Error fetching courses:", error);
-    //   toast.error(error.response?.data?.message || error.message);
-    // }
-    setEnrolledCourses;
+      if (data.success) {
+        setEnrolledCourses(data.enrolledCourses.reverse());
+      } else {
+        toast.error(data?.message || "No enrolled courses found.");
+      }
+    } catch (error) {
+      console.error("Error fetching courses:", error);
+      toast.error(error.response?.data?.message || error.message);
+    }
+    // setEnrolledCourses(dummyCourses);
   };
 
   useEffect(() => {
@@ -160,9 +158,9 @@ export const AppContextProvider = (props) => {
 
   useEffect(() => {
     if (user) {
-      // fetchUserData();
+      fetchUserData();
       logToken();
-      // fetchUserEnrolledCourses();
+      fetchUserEnrolledCourses();
     }
   }, [user]);
 
