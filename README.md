@@ -142,7 +142,7 @@ Edemy LMS is a full-stack learning management system (LMS) that provides educato
 
 ```bash
 git clone https://github.com/Tirth1224/Edemy-Learning-Management-System.git
-cd edemy-lms
+cd Edemy-lms
 ```
 
 ### 2️⃣ Install Dependencies
@@ -166,6 +166,29 @@ npm start
 ### 3️⃣ Setup Environment Variables
 
 Create a `.env` file in both `client/` and `server/` directories and add required credentials (MongoDB, Cloudinary, Clerk, Stripe, etc.).
+
+#### .env file for Frontend 
+```bash
+VITE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+VITE_BACKEND_URL=http://localhost:3000
+VITE_CURRENCY=$
+```
+
+#### .env file for Backend 
+```bash
+VITE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+VITE_BACKEND_URL=http://localhost:3000
+VITE_CURRENCY=$
+VITE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+VITE_BACKEND_URL=http://localhost:3000
+VITE_CURRENCY=$
+VITE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+VITE_BACKEND_URL=http://localhost:3000
+VITE_CURRENCY=$
+VITE_PUBLISHABLE_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+VITE_BACKEND_URL=http://localhost:3000
+VITE_CURRENCY=$
+```
 
 ---
 
@@ -197,8 +220,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🎯 Contributors
 
-👤 **Gyan Pratap Singh** – _Developer & Maintainer_  
-📧 Contact: [tirthp292002@gmail.com](mailto:tirthp292002@gmail.com)  
+👤 **Tirth Patel** – _Developer & Maintainer_  
+📧 Contact: [tirthp292003@gmail.com](mailto:tirthp292003@gmail.com)  
 🔗 GitHub: [@tirthpatel](https://github.com/Tirth1224)
 
 ## 🌐 Connect with Us
@@ -206,7 +229,7 @@ This project is licensed under the [MIT License](LICENSE).
 Contact Us:
 
 - **Name**: Tirth Patel
-- **Email**: [tirthp292002@gmail.com](mailto:tirthp292002@gmail.com)
+- **Email**: [tirthp292003@gmail.com](mailto:tirthp292003@gmail.com)
 - **GitHub**: [@tirthpatel](https://github.com/Tirth1224)
 - **Portfolio**: [Tirth's Portfolio](https://tirthppatel.vercel.app/)
 
