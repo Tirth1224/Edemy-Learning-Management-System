@@ -92,7 +92,7 @@ const AboutMeSection = () => {
           </div>
 
           {/* Introduction Text */}
-          <div className="text-gray-700 px-4 sm:px-0">
+          <div className="text-gray-700 px-9 sm:px-0">
             <h3 className="text-2xl font-semibold mb-4">Hello! 👋</h3>
             <p className="mb-4">
               I'm Tirth Patel, the developer behind Edemy. With expertise in
