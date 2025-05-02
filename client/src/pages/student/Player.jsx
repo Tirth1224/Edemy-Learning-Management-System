@@ -7,7 +7,7 @@ import YouTube from "react-youtube";
 import Footer from "../../components/student/Footer";
 import Rating from "../../components/student/Rating";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import Loading from "../../components/student/Loading";
 
 const Player = () => {
@@ -59,7 +59,7 @@ const Player = () => {
       );
 
       if (data.success) {
-        // console.log("data palyer", data);
+        console.log("data palyer", data);
         toast.success(data.message);
         getCourseProgress();
       } else {
@@ -81,7 +81,7 @@ const Player = () => {
 
       if (data.success) {
         setProgressData(data.progressData);
-        toast.success(data.message);
+        // toast.success(data.message);
       } else {
         toast.error(data.message);
       }

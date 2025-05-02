@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white" id="contact">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-7">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 border border-blue-200">

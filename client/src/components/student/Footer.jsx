@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
-
+import toast from "react-hot-toast";
 import SocialIcons from "../SocialIcons";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
   // Added subscription handler
   const handleSubscribe = () => {
     console.log("Subscribed with:", subscribeEmail);
-    alert(`Subscribed with: ${subscribeEmail}`);
+    toast.success(`Subscribed with: ${subscribeEmail}`);
     setSubscribeEmail("");
   };
 

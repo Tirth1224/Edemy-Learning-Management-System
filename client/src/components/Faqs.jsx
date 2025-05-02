@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import {
   ArrowRight,
   Users,
@@ -30,7 +30,7 @@ const fadeIn = {
 
 const Faqs = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="faqs">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -87,7 +87,7 @@ const Faqs = () => {
                   <>
                     <Disclosure.Button className="flex justify-between w-full py-4 text-left font-medium hover:text-blue-600">
                       {faq.question}
-                      <ChevronUpIcon
+                      <ChevronDownIcon
                         className={`w-5 h-5 transition-transform duration-200 ${
                           open ? "rotate-180 text-blue-600" : ""
                         }`}

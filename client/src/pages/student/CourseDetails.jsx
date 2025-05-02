@@ -6,7 +6,7 @@ import { assets } from "../../assets/assets";
 import humanizeDuration from "humanize-duration";
 import Footer from "../../components/student/Footer";
 import YouTube from "react-youtube";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import axios from "axios";
 
 const CourseDetails = () => {

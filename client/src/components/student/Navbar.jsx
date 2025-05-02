@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 import { AppContext } from "../../context/AppContext";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import Logger from "../Logger";
 
 const Navbar = () => {

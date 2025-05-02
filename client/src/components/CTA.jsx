@@ -23,27 +23,32 @@ const CTA = () => {
             educator wanting to share knowledge, Edemy LMS is the perfect
             platform for you.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-md mx-auto">
             {user ? (
               <a
                 href="#"
-                className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition duration-300"
+                className="w-full sm:w-auto text-center bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition duration-300"
               >
                 Get Started
               </a>
             ) : (
               <button
                 onClick={() => openSignIn()}
-                className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition duration-300"
+                className="w-full sm:w-auto text-center bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition duration-300"
               >
                 Get Started
               </button>
             )}
-            <a href="#">
-              <button className="flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
-                Learn more <img src={assets.arrow_icon} alt="arrow_icon" />
-              </button>
-            </a>
+
+            <button className="w-full sm:w-auto flex justify-center items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition duration-300">
+              Learn more{" "}
+              <img
+                src={assets.arrow_icon}
+                alt="arrow_icon"
+                className="w-4 h-4"
+              />
+            </button>
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">

@@ -87,12 +87,13 @@ const VisionMission = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://youtube.com/embed/MnOLdKowejE?si=r1dYd9_YqBreLkAB?autoplay=1"
-                    title="Edemy Story"
+                    src="https://www.youtube.com/embed/MnOLdKowejE?autoplay=1"
+                    title="Edemy's Vision Mission"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
+
                   <button
                     className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/80"
                     onClick={() => setActiveVideo(false)}

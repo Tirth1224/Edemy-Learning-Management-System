@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const ContactUSHero = () => {
   return (
@@ -15,18 +16,14 @@ const ContactUSHero = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="bg-blue-600 hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition-colors">
-              <Link
-                to="https://github.com/Tirth1224/Edemy-Learning-Management-System"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-              </Link>
+              <HashLink smooth to="/contact#contact" rel="noopener noreferrer">
+                Any Suggestions?
+              </HashLink>
             </button>
             <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition-colors">
-              <Link to="https://github.com/Tirth1224/Edemy-Learning-Management-System/blob/main/README.md">
-                Read Documentation
-              </Link>
+              <HashLink smooth to="/contact#faqs">
+                Any Queries?
+              </HashLink>
             </button>
           </div>
         </div>

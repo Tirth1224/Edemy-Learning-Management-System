@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const AboutHero = () => {
   return (
     <section className="bg-gradient-to-b from-cyan-100/70 to-white py-20">
@@ -18,6 +30,7 @@ const AboutHero = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <button className="bg-blue-600 hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition-colors">
               <Link
+                variants={fadeIn}
                 to="https://github.com/Tirth1224/Edemy-Learning-Management-System"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -26,7 +39,10 @@ const AboutHero = () => {
               </Link>
             </button>
             <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition-colors">
-              <Link to="https://github.com/Tirth1224/Edemy-Learning-Management-System/blob/main/README.md">
+              <Link
+                variant={fadeIn}
+                to="https://github.com/Tirth1224/Edemy-Learning-Management-System/blob/main/README.md"
+              >
                 Read Documentation
               </Link>
             </button>

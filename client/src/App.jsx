@@ -13,16 +13,18 @@ import MyCourses from "./pages/educator/MyCourses";
 import StudentsEnrolled from "./pages/educator/StudentsEnrolled";
 import Navbar from "./components/student/Navbar";
 import "quill/dist/quill.snow.css";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import About from "./components/About";
 import ContactForm from "./components/ContactForm";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const isEducatorRoute = useMatch("/educator/*");
 
   return (
     <div className="text-default min-h-screen bg-white">
-      <ToastContainer />
+      <Toaster position="top-right" reverseOrder={false} />
+      <ScrollToTop />
       {!isEducatorRoute && <Navbar />}
 
       <Routes>

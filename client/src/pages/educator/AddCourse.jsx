@@ -2,7 +2,7 @@ import React, { act, useContext, useEffect, useRef, useState } from "react";
 import uniqid from "uniqid";
 import Quill from "quill";
 import { assets } from "../../assets/assets";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import axios from "axios";
 import { AppContext } from "../../context/AppContext";
 import Logger from "../../components/Logger";

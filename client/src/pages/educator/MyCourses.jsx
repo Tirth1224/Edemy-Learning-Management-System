@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import Loading from "../../components/student/Loading";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import Logger from "../../components/Logger";
 
 const MyCourses = () => {

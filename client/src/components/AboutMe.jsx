@@ -2,6 +2,18 @@ import profilePic from "../assets/tirth.jpg";
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const AboutMeSection = () => {
   return (
     <section className="py-20 bg-white">
@@ -24,6 +36,7 @@ const AboutMeSection = () => {
           <div className="bg-white p-4 rounded-xl text-center shadow-lg hover:shadow-2xl transition-shadow max-w-xs mx-auto">
             <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden">
               <img
+                variants={fadeIn}
                 src={profilePic}
                 alt="Tirth Patel"
                 className="object-cover h-full w-full rounded-full"
@@ -79,7 +92,7 @@ const AboutMeSection = () => {
           </div>
 
           {/* Introduction Text */}
-          <div className="text-gray-700">
+          <div className="text-gray-700 px-4 sm:px-0">
             <h3 className="text-2xl font-semibold mb-4">Hello! 👋</h3>
             <p className="mb-4">
               I'm Tirth Patel, the developer behind Edemy. With expertise in
