@@ -1,6 +1,5 @@
 import React, { act, useContext, useEffect, useRef, useState } from "react";
-// import uniqid from "uniqid";
-import { v4 as uuidv4 } from "uuid";
+import uniqid from "uniqid";
 import Quill from "quill";
 import { assets } from "../../assets/assets";
 import toast from "react-hot-toast";
@@ -34,8 +33,7 @@ const AddCourse = () => {
       const title = prompt("Enter Chapter Name:");
       if (title) {
         const newChapter = {
-          // chapterId: uniqid(),
-          chapterId: uuidv4(),
+          chapterId: uniqid(),
           chapterTitle: title,
           chapterContent: [],
           collapsed: false,
@@ -85,8 +83,7 @@ const AddCourse = () => {
               chapter.chapterContent.length > 0
                 ? chapter.chapterContent.slice(-1)[0].lectureOrder + 1
                 : 1,
-            // lectureId: uniqid(),
-            lectureId: uuidv4(),
+            lectureId: uniqid(),
           };
           // console.log("LectureId" , lectureId);
           console.log("Lecture", newLecture);
