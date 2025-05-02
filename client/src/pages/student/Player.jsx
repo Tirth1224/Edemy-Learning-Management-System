@@ -59,7 +59,7 @@ const Player = () => {
       );
 
       if (data.success) {
-        console.log("data palyer", data);
+        // console.log("data palyer", data);
         toast.success(data.message);
         getCourseProgress();
       } else {
