@@ -54,7 +54,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="border border-gray-500/30 bg-gray-800 text-gray-500 placeholder-gray-100 outline-none w-64 h-9 rounded px-2 text-sm"
+              className="border border-gray-500/30 bg-gray-800 text-gray-50 placeholder-gray-100 outline-none w-64 h-9 rounded px-2 text-sm"
               value={subscribeEmail}
               onChange={(e) => setSubscribeEmail(e.target.value)}
             />
