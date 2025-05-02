@@ -14,7 +14,7 @@ Edemy LMS is a full-stack learning management system (LMS) that provides educato
 
 - **React** (via Vite) ⚡
 - **React Router DOM** for navigation
-- **React Toastify** for notifications
+- **React Hot Toast** for notifications
 - **Framer Motion** for animations
 - **Quill** for rich text editing
 - **Axios** for API requests
